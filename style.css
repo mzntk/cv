@@ -1,0 +1,481 @@
+/* --- ZMIENNE KOLORYSTYCZNE (Eleganckie i stonowane) --- */
+:root {
+    --bg-color: #faf9f8; /* Bardzo jasny, neutralny odcień (prawie biały, ale łagodniejszy) */
+    --sekcja-bg: #ffffff; /* Czysta biel dla kafelków i menu */
+    --text-color: #333333; /* Mocny grafit - doskonała czytelność */
+    --akcent-glowny: #bfa3a8; /* Zgaszony, chłodny róż (rose taupe) */
+    --akcent-ciemny: #967d82; /* Ciemniejsza wersja do najechania myszką */
+}
+
+/* --- RESET I PODSTAWY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- TYPOGRAFIA (NAGŁÓWKI) --- */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* --- GŁÓWNE MENU (HEADER) --- */
+header {
+    background-color: var(--sekcja-bg);
+    border-bottom: 1px solid #eeeeee; /* Cienkie, profesjonalne odcięcie menu */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--akcent-glowny);
+}
+
+/* --- WSPÓLNE STYLE DLA SEKCJI --- */
+section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- SEKCJA POWITALNA (HERO) --- */
+#powitanie img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--akcent-glowny); /* Cienksza, subtelniejsza ramka */
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Profesjonalny, delikatny szary cień */
+}
+
+#powitanie h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+#powitanie h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #555555;
+}
+
+#powitanie p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- SEKCJA O MNIE --- */
+#o-mnie {
+    background-color: var(--sekcja-bg);
+    border-radius: 8px; /* Mniejsze zaokrąglenia - bardziej biznesowy wygląd */
+    padding: 60px 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    margin-top: 40px;
+    margin-bottom: 80px;
+    border-top: 4px solid var(--akcent-glowny); /* Cienki pasek na górze sekcji zamiast całej ramki */
+}
+
+#o-mnie h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#o-mnie p {
+    font-size: 1.05rem;
+    text-align: left; /* Tekst wyrównany do lewej jest łatwiejszy do skanowania przez rekruterów */
+}
+
+/* --- RESPONSYWNOŚĆ (DLA TELEFONÓW) --- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    #powitanie h1 {
+        font-size: 2.2rem;
+    }
+    
+    #o-mnie {
+        padding: 40px 20px;
+    }
+}
+
+/* --- PODSTRONY: NAGŁÓWKI SEKCJI --- */
+#naglowek-sekcji {
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 40px;
+}
+
+#naglowek-sekcji h1 {
+    font-size: 2.5rem;
+    color: var(--akcent-ciemny);
+}
+
+#naglowek-sekcji p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- KARTY DOŚWIADCZENIA ZAWODOWEGO --- */
+#lista-doswiadczen {
+    max-width: 800px;
+    padding: 0 20px 80px;
+}
+
+.doswiadczenie-karta {
+    background-color: var(--sekcja-bg);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--akcent-glowny);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doswiadczenie-karta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.daty {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.doswiadczenie-karta h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.doswiadczenie-karta h4 {
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: var(--akcent-ciemny);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.doswiadczenie-karta ul {
+    list-style-type: none; /* Usuwamy domyślne kropki */
+}
+
+.doswiadczenie-karta li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Własne, eleganckie punktory */
+.doswiadczenie-karta li::before {
+    content: "•";
+    color: var(--akcent-glowny);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -6px;
+}
+
+.doswiadczenie-karta li strong {
+    color: var(--text-color);
+}
+
+/* Responsywność dla kart */
+@media (max-width: 768px) {
+    .doswiadczenie-karta {
+        padding: 25px;
+    }
+}
+
+/* --- PODSTRONA: WYKSZTAŁCENIE I ROZWÓJ --- */
+.rozwoj-sekcja {
+    max-width: 900px;
+    padding: 0 20px 60px;
+    text-align: left; /* Zmiana wyrównania dla lepszej czytelności */
+}
+
+.rozwoj-sekcja h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- TAGI Z PRZEDMIOTAMI --- */
+.tagi-przedmiotow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tag {
+    background-color: var(--bg-color);
+    border: 1px solid var(--akcent-glowny);
+    color: var(--text-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: var(--akcent-glowny);
+    color: #fff;
+}
+
+/* --- GRID DLA PROGRAMÓW I KONFERENCJI --- */
+.karty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.rozwoj-karta {
+    background-color: var(--sekcja-bg);
+    border-radius: 8px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-top: 4px solid var(--akcent-glowny);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rozwoj-karta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.rozwoj-karta .ikona {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.rozwoj-karta h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.rozwoj-karta h4 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--akcent-ciemny);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.rozwoj-karta p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* --- PRZYCISK "WKRÓTCE" --- */
+.przycisk-wkrotce {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px dashed var(--akcent-ciemny);
+    color: var(--akcent-ciemny);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.przycisk-wkrotce:hover {
+    background-color: var(--akcent-glowny);
+    color: #fff;
+    border-style: solid;
+}
+
+/* --- LOGO W KARTACH ROZWOJU --- */
+.ikona-obrazkowa {
+    margin-bottom: 15px;
+    height: 60px; /* Stała wysokość, żeby karty równo wyglądały */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ikona-obrazkowa img {
+    max-height: 100%; /* Obrazek nie przekroczy 60px wysokości */
+    max-width: 100%;  /* Obrazek nie wyleje się na boki */
+    object-fit: contain; /* Zachowuje proporcje logo */
+}
+
+/* --- PORTFOLIO PROJEKTY (Układ tekstowy / Karty) --- */
+#portfolio-projekty-tekstowe {
+    max-width: 850px;
+    padding: 0 20px 80px;
+    margin: 0 auto;
+}
+
+.projekt-karta {
+    background-color: var(--sekcja-bg);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--akcent-glowny);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projekt-karta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.projekt-karta h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.projekt-kontekst {
+    font-size: 0.95rem;
+    color: var(--akcent-ciemny);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.projekt-karta p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.projekt-linki {
+    margin-top: 25px;
+}
+
+/* Przycisk akcji (GitHub / Demo) */
+.przycisk-akcja {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--akcent-glowny);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.przycisk-akcja:hover {
+    background-color: var(--akcent-ciemny);
+    transform: translateY(-2px);
+}
+
+/* Responsywność dla kart projektów */
+@media (max-width: 768px) {
+    .projekt-karta {
+        padding: 25px;
+    }
+}
+
+/* --- PODSTRONA KONTAKT --- */
+#kontakt-sekcja {
+    max-width: 900px;
+    padding: 0 20px 80px;
+    margin: 0 auto;
+}
+
+.kontakt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.kontakt-karta {
+    background-color: var(--sekcja-bg);
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-top: 4px solid var(--akcent-glowny);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: block; /* Sprawia, że cała karta jest klikalna */
+}
+
+.kontakt-karta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border-color: var(--akcent-ciemny);
+}
+
+.ikona-kontakt {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.kontakt-karta h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.kontakt-karta p {
+    font-size: 1rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.kontakt-karta:hover p {
+    color: var(--akcent-ciemny);
+}
